@@ -18,7 +18,7 @@ create table if not exists tipo_hospitalizacion (
 query_creation_gastos = """
 create table if not exists gastos (
     gastos_id SERIAL primary key,
-    año INT not null,
+    anio INT not null,
     totalcompra NUMERIC, 
     producfarma NUMERIC, 
     materialsani NUMERIC, 
@@ -48,6 +48,7 @@ create table if not exists gastos (
 query_creation_ingresos = """
 create table if not exists ingresos (
     id_ingresos serial primary key,
+    anio INT not null,
     particulares NUMERIC,
     aseguradoras NUMERIC,
     aseguradoras_enfermedad NUMERIC,

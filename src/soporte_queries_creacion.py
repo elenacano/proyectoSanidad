@@ -9,7 +9,7 @@ create table if not exists hospitales (
 # Tipos de hospityalizacion de los hospitales 
 query_creation_tipo_hosp = """
 create table if not exists tipo_hospitalizacion (
-    tipo_id SERIAL primary key,
+    tipo_id int primary key,
     nombre VARCHAR(100) unique not null
     );
 """

@@ -51,3 +51,18 @@ def creacion_tablas(cursor, conexion):
     ejecutar_commit(soporte_queries_creacion.query_creacion_ingresos)
 
 
+def dbeaver_commitmany(conexion, query, *values):
+    """
+    Ejecuta múltiples consultas y realiza un commit de los cambios.
+
+    Args:
+        conexion (connection): Un objeto de conexión a la base de datos.
+        query (str): La consulta SQL a ejecutar.
+        *values: Los valores a incluir en la consulta.
+
+    Returns:
+        str: Un mensaje de confirmación después del commit.
+    """
+    cursor = conexion.cursor()
+    cursor.executemany(query, *values)
+    conexion.commit()
